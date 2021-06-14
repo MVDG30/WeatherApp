@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Head up in the clouds</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/03a353363d.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <span class="card main" style="max-width: 900px;">
+        <span class="card-body">
+          <h1>Head up in the clouds</h1>
+          <form id="search-city-form">
+            <input
+            id="input-city"
+              type="search"
+              class="form-control"
+              placeholder="Look up city"
+              autocomplete="off"
+              autofocus="off"
+            />
+            <input type="submit" class="search-button btn" value="Search" />
+            <button id="current-position">Current Location</button>
+          </form>
+          <br />
+          <h2>Today in <strong id="current-city">City</strong></h2>
+<h5 id="current-day-time">Day and time</h5>
+          <div class="row">
+            <div class="col-sm-8">
+              <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="img/sun.png" alt="weather-icon" width="200px" />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title temperature"> <strong id="current-temp">25 </strong> <strong><a href="" id="celsius">˚C</a> </strong>|<a href="" id="fahrenheit">˚F </a> </h5>
+                      <p class="card-text">
+                        <strong id="weather-description">sunny</strong>, <strong id="humidity">45</strong>% humidity, <strong id="wind-speed">2</strong>km/h wind
+                      </p>
+
+                      <p class="card-text">
+                        <small class="text-muted"
+                          >Last updated 3 mins ago</small
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="card text-center weather-essentials">
+                <div class="card-body">
+                  <h4 class="card-title">Time for some ...</h4>
+                </div>
+                <h1 class="temperature">🧴 🩴 🕶</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="row forecast">
+            <div class="col-sm-2">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title day">Tomorrow</h5>
+                  <img src="img/sun.png" alt="weather-icon" width="50px" />
+                  <p class="card-text temperature">22˚C</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title day">Sunday</h5>
+                  <img src="img/sun.png" alt="weather-icon" width="50px" />
+                  <p class="card-text temperature">22˚C</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title day">Monday</h5>
+                  <img src="img/sun.png" alt="weather-icon" width="50px" />
+                  <p class="card-text temperature">22˚C</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title day">Tuesday</h5>
+                  <img src="img/sun.png" alt="weather-icon" width="50px" />
+                  <p class="card-text temperature">22˚C</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card text-center">
+                <div class="card-body">
+                  <h5 class="card-title day">Wednesday</h5>
+                  <img src="img/sun.png" alt="weather-icon" width="50px" />
+                  <p class="card-text temperature">22˚C</p>
+                </div>
+              </div>
+            </div>
+            </div>
+            </div>
+          </div>
+        </span>
+      </span>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
