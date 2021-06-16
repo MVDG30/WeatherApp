@@ -6,7 +6,7 @@ h1 {
   font-weight: 700;
 }
 
-.card-body {
+.card {
   margin-top: 50px;
   margin: 0 auto;
   align-content: center;
@@ -15,10 +15,9 @@ h1 {
   border: none;
   box-shadow: 0px 3px 8px rgb(140, 147, 159, 30%);
 }
-.card.text-center .col-md-4 {
-  background: #ffe8d6;
-  border-radius: 15px;
-  border: none;
+.main {
+  margin-right: calc(var(--bs-gutter-x) / 1);
+  margin: 20px auto;
 }
 .form-control {
   display: inline;
@@ -71,4 +70,10 @@ button:hover {
 #fahrenheit {
   color: rgb(57, 62, 70);
   text-decoration: none;
+}
+#codedBy {
+  display: table;
+  margin: 0 auto;
+  line-height: 0.5;
+  text-align: left;
 }
