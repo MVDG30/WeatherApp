@@ -6,7 +6,7 @@ h1 {
   font-weight: 700;
 }
 
-.card {
+.card-body {
   margin-top: 50px;
   margin: 0 auto;
   align-content: center;
@@ -15,9 +15,10 @@ h1 {
   border: none;
   box-shadow: 0px 3px 8px rgb(140, 147, 159, 30%);
 }
-.main {
-  margin-right: calc(var(--bs-gutter-x) / 1);
-  margin: 20px auto;
+.card.text-center .col-md-4 {
+  background: #ffe8d6;
+  border-radius: 15px;
+  border: none;
 }
 .form-control {
   display: inline;
@@ -41,7 +42,7 @@ button {
   background: #ff971d;
   border-radius: 20px;
   padding: 6px 12px;
-  color: #ffff;
+  color: #f9f6f7;
   border: none;
   box-shadow: 0px 1px 8px rgb(140, 147, 159, 30%);
 }
