@@ -27,7 +27,16 @@ currentDayTime.innerHTML = `${day} ${hours}:${minutes}`;
 function showWeather(response) {
   let temperature = Math.round(response.data.main.temp);
   let cityTemperature = document.querySelector("#current-temp");
+  let descriptionElement = document.querySelector("#weather-description");
+  let cityDescription = response.data.weather[0].description;
+  let humidityElement = document.querySelector("#humidity");
+  let cityHumidity = response.data.main.humidity;
+  let windElement = document.querySelector("#wind-speed");
+  let cityWindSpeed = Math.round(response.data.wind.speed);
   cityTemperature.innerHTML = temperature;
+  descriptionElement.innerHTML = cityDescription;
+  humidityElement.innerHTML = cityHumidity;
+  windElement.innerHTML = cityWindSpeed;
 }
 
 function inputCity(event) {
@@ -45,11 +54,21 @@ function inputCity(event) {
 let citySearch = document.querySelector("#search-city-form");
 citySearch.addEventListener("submit", inputCity);
 
-function showTemperature(response) {
+function showLocalTemp(response) {
   let currentTemp = Math.round(response.data.main.temp);
   let city = response.data.name;
   let locationTemperature = document.querySelector("h2");
+  let localDescriptionElement = document.querySelector("#weather-description");
+  let localDescription = response.data.weather[0].description;
+  let localHumidityElement = document.querySelector("#humidity");
+  let localHumidity = Math.round(response.data.main.humidity);
+  let localWindElement = document.querySelector("#wind-speed");
+  let localWindSpeed = Math.round(response.data.wind.speed);
+
   locationTemperature.innerHTML = `It is currently ${currentTemp}˚C in ${city}`;
+  localDescriptionElement.innerHTML = localDescription;
+  localHumidityElement.innerHTML = localHumidity;
+  localWindElement.innerHTML = localWindSpeed;
 }
 function showPosition(position) {
   let myApiKey = "c3704d557b195c9549dbf7f2691c5783";
@@ -57,7 +76,7 @@ function showPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${myApiKey}&units=${units}`;
-  axios.get(weatherApiUrl).then(showTemperature);
+  axios.get(weatherApiUrl).then(showLocalTemp);
 }
 
 function getPosition(event) {

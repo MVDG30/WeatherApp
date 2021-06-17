@@ -2,8 +2,25 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   color: rgb(57, 62, 70);
 }
+
 h1 {
   font-weight: 700;
+}
+
+button {
+  background: #ff971d;
+  border-radius: 20px;
+  padding: 6px 12px;
+  color: #f9f6f7;
+  border: none;
+  box-shadow: 0px 1px 8px rgb(140, 147, 159, 30%);
+}
+
+button:hover {
+  cursor: pointer;
+  transition: all ease-in-out 200ms;
+  background: #f9f6f7;
+  color: #ff971d;
 }
 
 .card {
@@ -15,15 +32,18 @@ h1 {
   border: none;
   box-shadow: 0px 3px 8px rgb(140, 147, 159, 30%);
 }
+
 .main {
   margin-right: calc(var(--bs-gutter-x) / 1);
   margin: 20px auto;
 }
+
 .form-control {
   display: inline;
   max-width: 300px;
   border-radius: 20px;
 }
+
 .search-button {
   border-radius: 20px;
   margin: 10px;
@@ -37,29 +57,39 @@ h1 {
   color: #ff971d;
   transition: all ease-in-out 200ms;
 }
-button {
-  background: #ff971d;
-  border-radius: 20px;
-  padding: 6px 12px;
-  color: #f9f6f7;
-  border: none;
-  box-shadow: 0px 1px 8px rgb(140, 147, 159, 30%);
-}
-button:hover {
-  cursor: pointer;
-  transition: all ease-in-out 200ms;
-  background: #f9f6f7;
-  color: #ff971d;
-}
+
 .card-title strong {
   color: #ff971d;
 }
 
+.col-sm-8 {
+  padding-left: 0px;
+}
+
+.card-body {
+  padding-left: 20px;
+}
+
+.weather-details {
+  list-style: none;
+  padding-left: 0px;
+  text-transform: capitalize;
+}
 .day {
   color: #ff971d;
 }
 .row .forecast {
   border: 0;
+}
+
+.units {
+  position: relative;
+  top: -17px;
+}
+
+#current-temp {
+  font-size: 50px;
+  line-height: 1;
 }
 
 #celsius {

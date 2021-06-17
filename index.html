@@ -41,7 +41,7 @@
             <button id="current-position">Current Location</button>
           </form>
           <br />
-          <h2>Today in <strong id="current-city">City</strong></h2>
+          <h2>Today in <strong id="current-city"></strong></h2>
      <h5 id="current-day-time">Day and time</h5>
           <div class="row">
             <div class="col-sm-8">
@@ -52,16 +52,24 @@
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title temperature"> <strong id="current-temp">25 </strong> <strong><a href="" id="celsius">˚C</a> </strong>|<a href="" id="fahrenheit">˚F </a> </h5>
-                      <p class="card-text">
-                        <strong id="weather-description">sunny</strong>, <strong id="humidity">45</strong>% humidity, <strong id="wind-speed">2</strong>km/h wind
-                      </p>
-
-                      <p class="card-text">
-                        <small class="text-muted"
-                          >Last updated 3 mins ago</small
-                        >
-                      </p>
+                      <h5 class="card-title temperature"> 
+                        <strong id="current-temp">
+                          25 
+                        </strong> 
+                        <span class="units">
+                        <strong>
+                          <a href="" id="celsius">
+                            ˚C
+                          </a> 
+                        </strong>
+                        |
+                        <a href="" id="fahrenheit">˚F </a> </h5>
+                        </span>
+                      <ul class="weather-details">
+                        <li><strong id="weather-description"></strong> </li>
+                        <li><strong id="humidity"></strong>% humidity</li> 
+                        <li><strong id="wind-speed"></strong>km/h wind </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
