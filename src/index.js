@@ -33,10 +33,17 @@ function showWeather(response) {
   let cityHumidity = response.data.main.humidity;
   let windElement = document.querySelector("#wind-speed");
   let cityWindSpeed = Math.round(response.data.wind.speed);
+  let iconElement = document.querySelector("#icon");
+
   cityTemperature.innerHTML = temperature;
   descriptionElement.innerHTML = cityDescription;
   humidityElement.innerHTML = cityHumidity;
   windElement.innerHTML = cityWindSpeed;
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function inputCity(event) {
@@ -64,11 +71,17 @@ function showLocalTemp(response) {
   let localHumidity = Math.round(response.data.main.humidity);
   let localWindElement = document.querySelector("#wind-speed");
   let localWindSpeed = Math.round(response.data.wind.speed);
+  let localIcon = document.querySelector("#icon");
 
   locationTemperature.innerHTML = `It is currently ${currentTemp}˚C in ${city}`;
   localDescriptionElement.innerHTML = localDescription;
   localHumidityElement.innerHTML = localHumidity;
   localWindElement.innerHTML = localWindSpeed;
+  localIcon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  localIcon.setAttribute("alt", response.data.weather[0].description);
 }
 function showPosition(position) {
   let myApiKey = "c3704d557b195c9549dbf7f2691c5783";
