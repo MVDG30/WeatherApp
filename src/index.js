@@ -35,6 +35,8 @@ function showWeather(response) {
   let cityWindSpeed = Math.round(response.data.wind.speed);
   let iconElement = document.querySelector("#icon");
 
+  celsiusTemperature = Math.round(response.data.main.temp);
+
   cityTemperature.innerHTML = temperature;
   descriptionElement.innerHTML = cityDescription;
   humidityElement.innerHTML = cityHumidity;
@@ -99,3 +101,28 @@ function getPosition(event) {
 }
 let locationButton = document.querySelector("button");
 locationButton.addEventListener("click", getPosition);
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#current-temp");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temp");
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  temperatureElement.innerHTML = celsiusTemperature;
+}
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let celsiusTemperature = null;

@@ -85,6 +85,7 @@ button:hover {
 .units {
   position: relative;
   top: -17px;
+  text-decoration: none;
 }
 
 #current-temp {
@@ -92,15 +93,12 @@ button:hover {
   line-height: 1;
 }
 
-#celsius {
+.weather-temperature .active {
   color: #ff971d;
+  cursor: default;
   text-decoration: none;
 }
 
-#fahrenheit {
-  color: rgb(57, 62, 70);
-  text-decoration: none;
-}
 #codedBy {
   display: table;
   margin: 0 auto;
