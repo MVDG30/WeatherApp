@@ -78,8 +78,8 @@ button:hover {
 .day {
   color: #ff971d;
 }
-.row .forecast {
-  border: 0;
+.row {
+  border: none;
 }
 
 .units {

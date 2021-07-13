@@ -24,6 +24,31 @@ if (minutes < 10) {
 let currentDayTime = document.querySelector("#current-day-time");
 currentDayTime.innerHTML = `${day} ${hours}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = "";
+  let days = ["Mon", "Tue", "Wed", "Thu"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-sm-3">
+    <div class="text-center">
+    <div class="card-body">
+    <h5 class="card-title day">${day}</h5>
+    <img src="img/sun.png" alt="weather-icon" width="50px" />
+    <p class="card-text temperature">22˚C</p>
+    </div>
+    </div>
+    </div>
+  
+ `;
+
+    forecastElement.innerHTML = forecastHTML;
+  });
+}
+
 function showWeather(response) {
   let temperature = Math.round(response.data.main.temp);
   let cityTemperature = document.querySelector("#current-temp");
@@ -126,3 +151,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let celsiusTemperature = null;
+displayForecast();
