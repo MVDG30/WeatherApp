@@ -24,22 +24,35 @@ if (minutes < 10) {
 let currentDayTime = document.querySelector("#current-day-time");
 currentDayTime.innerHTML = `${day} ${hours}:${minutes}`;
 
+function formatDay(timestamp) {
+  let date = new date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = "";
-  let days = ["Mon", "Tue", "Wed", "Thu"];
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
     <div class="col-sm-3">
     <div class="text-center">
     <div class="card-body">
-    <h5 class="card-title day">${day}</h5>
-    <img src="img/sun.png" alt="weather-icon" width="50px" />
-    <p class="card-text temperature">22˚C</p>
+    <h5 class="card-title day"> ${formatDay(forecastDay.dt)} </h5>
+    <img src="https://openweathermap.org/img/wn/${
+      forecastDay.weather[0].icon
+    }@2x.png" alt="" width="42px" />
+    <span class="card-text temperature" id="temp-max">${Math.round(
+      forecastDay.temp.max
+    )})˚ </span>|<span id="temp-min"> ${Math.round(
+        forecastDay.temp.min
+      )}˚ </span>
     </div>
     </div>
     </div>
